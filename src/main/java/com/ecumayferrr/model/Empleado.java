@@ -18,19 +18,19 @@ public class Empleado {
 	private Long id;
 	
 	@Column(name = "nombre", unique = true)
-	private String nombre;
+	private String fullName;
 	
-	private LocalDate birtDate;
+	private LocalDate birthDate;
 	
 	private Boolean married;
 	
 	public Empleado() {}
 
-	public Empleado(Long id, String nombre, LocalDate birtDate, Boolean married) {
+	public Empleado(Long id, String nombre, LocalDate birthDate, Boolean married) {
 		super();
 		this.id = id;
-		this.nombre = nombre;
-		this.birtDate = birtDate;
+		this.fullName = nombre;
+		this.birthDate = birthDate;
 		this.married = married;
 	}
 
@@ -42,20 +42,20 @@ public class Empleado {
 		this.id = id;
 	}
 
-	public String getNombre() {
-		return nombre;
+	public String getFullName() {
+		return fullName;
 	}
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setFullName(String nombre) {
+		this.fullName = nombre;
 	}
 
-	public LocalDate getBirtDate() {
-		return birtDate;
+	public LocalDate getBirthDate() {
+		return birthDate;
 	}
 
-	public void setBirtDate(LocalDate birtDate) {
-		this.birtDate = birtDate;
+	public void setBirthDate(LocalDate birtDate) {
+		this.birthDate = birtDate;
 	}
 
 	public Boolean getMarried() {
@@ -65,5 +65,13 @@ public class Empleado {
 	public void setMarried(Boolean married) {
 		this.married = married;
 	}
+
+	@Override
+	public String toString() {
+		return "Empleado [id=" + id + ", fullName=" + fullName + ", birthDate=" + birthDate + ", married=" + married
+				+ "]";
+	}
+	
+	
 	
 }
